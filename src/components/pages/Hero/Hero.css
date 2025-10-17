@@ -1,0 +1,169 @@
+/* Hero Component Styles */
+.hero-section {
+  scroll-margin-top: 80px;
+  padding-top: 48px; /* xs: 12 * 4px */
+  padding-bottom: 24px; /* xs: 6 * 4px */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+@media (min-width: 900px) {
+  .hero-section {
+    padding-top: 64px; /* md: 16 * 4px */
+    padding-bottom: 40px; /* md: 10 * 4px */
+  }
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px; /* spacing={3} */
+}
+
+.hero-overline {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 900px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title-highlight {
+  color: var(--mui-palette-primary-main);
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* spacing={1.5} */
+}
+
+@media (min-width: 600px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.hero-button-outlined {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+}
+
+.hero-button-outlined:hover {
+  border-color: white !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navigation Arrows */
+.hero-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.hero-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-nav-button-left {
+  left: 8px; /* xs: 2 * 4px */
+}
+
+@media (min-width: 900px) {
+  .hero-nav-button-left {
+    left: 16px; /* md: 4 * 4px */
+  }
+}
+
+.hero-nav-button-right {
+  right: 8px; /* xs: 2 * 4px */
+}
+
+@media (min-width: 900px) {
+  .hero-nav-button-right {
+    right: 16px; /* md: 4 * 4px */
+  }
+}
+
+/* Carousel Dots */
+.hero-dots-container {
+  position: absolute;
+  bottom: 8px; /* xs: 2 * 4px */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px; /* gap: 1 * 8px */
+}
+
+@media (min-width: 900px) {
+  .hero-dots-container {
+    bottom: 16px; /* md: 4 * 4px */
+  }
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-dot-active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-dot-inactive {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
